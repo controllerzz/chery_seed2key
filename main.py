@@ -21,10 +21,7 @@ def chery_seed2key(seed: int) -> int:
 
 def main():
     seeds = [0x41C6, 0x1D6F, 0x0149, 0x3E7C, 0xE75E]
-    keys = [chery_seed2key(seed) for seed in seeds]
-
-    for idx in range(len(seeds)):
-        print(f"seed: {hex(seeds[idx])} -> key: {hex(keys[idx])}")
+    [print(f"seed: {hex(seed)} -> key: {hex(chery_seed2key(seed))}") for seed in seeds]
 
 
 if __name__ == "__main__":
