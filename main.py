@@ -1,10 +1,10 @@
 def chery_seed2key(seed: int) -> int:
     seed_list = (seed >> 8, seed & 0xFF)
-    temp = seed_list[0]
     result = 0xFFFE
+    temp: int
 
-    for seed_idx in range(2):
-        result = (result & 0xFFFF) ^ (seed_list[seed_idx] << 8)
+    for byte_idx in range(2):
+        result = (result & 0xFFFF) ^ (seed_list[byte_idx] << 8)
 
         for _ in range(8):
             if result & 0x8000:
